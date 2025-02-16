@@ -1,1 +1,1 @@
-cryptography
+pycaesarcipher==1.3
