@@ -1,5 +1,6 @@
 import pycaesarcipher
 import logging
+import os
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -27,6 +28,7 @@ def lambda_handler(event, context):
         # Hint: Inside the "s3" key, look for the "object" key which contains details about the S3 object.
         # Hint: The actual file name is stored in the "key" key within the "object" key.
         # file_name = <your code here>
+        file_name = os.path.basename(file_name)
         try:
             # DECRYPT THE FILE NAME USING CAESAR CIPHER
             # Hint: Use the decrypt_message function to decrypt the file name.

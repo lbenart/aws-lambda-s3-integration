@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # Configuration
-FUNCTION_NAME="s3FileLogger_<your-name>"
-ZIP_FILE="my_deployment_package.zip"
+
+#FUNCTION_NAME="your-lambda-function-name"
+#ROLE_ARN="arn:aws:iam::<your-account-id>:role/lambda-basic-role"
+#export AWS_ACCESS_KEY_ID="your-access-key-id"
+#export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
 VENV_DIR="my_virtual_env"
-ROLE_ARN="arn:aws:iam::<your-account-id>:role/lambda-basic-role"
-#AWS_ACCESS_KEY_ID="your-access-key-id"
-#AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+ZIP_FILE="my_deployment_package.zip"
 
 # Ensure script fails on errors
 set -e
