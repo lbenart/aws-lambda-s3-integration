@@ -6,6 +6,7 @@
 #ROLE_ARN="arn:aws:iam::<your-account-id>:role/lambda-basic-role"
 #export AWS_ACCESS_KEY_ID="your-access-key-id"
 #export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+export AWS_REGION="eu-west-1"
 VENV_DIR="my_virtual_env"
 ZIP_FILE="my_deployment_package.zip"
 
@@ -34,7 +35,6 @@ if aws lambda get-function --function-name "$FUNCTION_NAME" >/dev/null 2>&1; the
 else
   echo "Creating new Lambda function..."
   aws lambda create-function --function-name "$FUNCTION_NAME" \
-    --region eu-west-1  \
     --runtime python3.9 --role "$ROLE_ARN" \
     --handler lambda_function.lambda_handler --timeout 10 \
     --memory-size 128 --zip-file "fileb://$ZIP_FILE"
